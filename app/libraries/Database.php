@@ -13,7 +13,7 @@ class Database
 {
     protected $pdo;
 
-    public function __construct()
+    protected function connect()
     {
         $this->pdo = new PDO([
             'database_type' => getenv('DB_DRIVER'),
@@ -21,6 +21,17 @@ class Database
             'server'        => getenv('DB_HOST'),
             'username'      => getenv('DB_USERNAME'),
             'password'      => getenv('DB_PASSWORD')
+        ]);
+    }
+
+    protected function connectExec()
+    {
+        $this->pdo = new PDO([
+            'database_type' => getenv('DB_DRIVER_EXEC'),
+            'database_name' => getenv('DB_NAME_EXEC'),
+            'server'        => getenv('DB_HOST_EXEC'),
+            'username'      => getenv('DB_USERNAME_EXEC'),
+            'password'      => getenv('DB_PASSWORD_EXEC')
         ]);
     }
 }

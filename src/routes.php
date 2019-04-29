@@ -13,10 +13,10 @@ use Slim\Http\Response;
 //    return $this->renderer->render($response, 'index.phtml', $args);
 //});
 
-$app->post('/', function () use ($app) {
-    return 'test';
+$app->get('/', function () use ($app) {
+    return 'It Works';
 });
 
 $app->group('/api', function () use ($app) {
-    $app->post('/authenticate', 'AuthController:sso');
+    $app->map(['GET', 'POST'], '/authenticate', 'AuthController:sso');
 });

@@ -14,14 +14,6 @@ return [
             'name' => 'slim-app',
             'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
-        ],
-
-        'db' => [
-            'driver' => 'sqlsrv',
-            'host' => getenv('DB_HOST'),
-            'database' => getenv('DB_NAME'),
-            'username' => getenv('DB_USERNAME'),
-            'password' => getenv('DB_PASSWORD')
-        ],
+        ]
     ],
 ];
