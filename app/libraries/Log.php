@@ -7,6 +7,11 @@ use Monolog\Handler\RotatingFileHandler;
 
 class Log
 {
+    public function __construct()
+    {
+        Logger::setTimezone(new \DateTimeZone('Asia/Manila'));
+    }
+
     private function microtime_diff($start, $end = null)
     {
         if (!$end) {
@@ -22,10 +27,9 @@ class Log
         return floatval($diff_sec) + $diff_usec;
     }
 
-    public function authLog($message, $attribute, $time_start)
+    public function authLog($message, $attribute = [], $time_start)
     {
         // create a log channel
-        Logger::setTimezone(new \DateTimeZone('Asia/Manila'));
         $this->logger = new Logger('Auth');
         $this->logger->pushHandler(new RotatingFileHandler(__DIR__ . '/../../logs/auth.log', 0, Logger::INFO));
 
@@ -37,5 +41,14 @@ class Log
         $attribute['PROCESS_TIME'] = $total_time;
 
         $this->logger->info($message, $attribute);
+    }
+
+    public function dbLog($message, $attribute = [])
+    {
+        // create a log channel
+        $this->logger = new Logger('Database');
+        $this->logger->pushHandler(new RotatingFileHandler(__DIR__ . '/../../logs/db.log', 0, Logger::ERROR));
+
+        $this->logger->error($message, $attribute);
     }
 }

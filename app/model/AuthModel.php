@@ -4,6 +4,7 @@ namespace App\Model;
 
 use App\Libraries\Database;
 use App\Libraries\Input;
+use App\Libraries\Log;
 
 /**
  * Class AuthModel
@@ -15,6 +16,13 @@ class AuthModel extends Database
     public $username;
 
     public $password;
+
+    private $log;
+
+    public function __construct()
+    {
+        $this->log = new Log();
+    }
 
     public function auth() : array
     {
@@ -43,6 +51,7 @@ class AuthModel extends Database
             ])->fetch(\PDO::FETCH_ASSOC);
 
         if ($result === false) {
+            $this->log->dbLog('Database Error', $this->pdo->error());
             return $this->pdo->error();
         }
 
@@ -60,6 +69,7 @@ class AuthModel extends Database
         ])->fetch(\PDO::FETCH_ASSOC);
 
         if ($result === false) {
+            $this->log->dbLog('Database Error', $this->pdo->error());
             return $this->pdo->error();
         }
         
