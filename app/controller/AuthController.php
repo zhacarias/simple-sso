@@ -47,7 +47,7 @@ class AuthController
             'VALUE' => $result['RETURN_VALUE'],
             'IP' => $ip_origin,
             'METHOD' => $method,
-            'START_TIME' => $time_start_full
+            'START' => $time_start_full
         ];
 
         $this->log->authLog($username, $attribute, $time_start);

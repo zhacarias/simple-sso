@@ -38,7 +38,7 @@ class Log
         $total_time = round($time_elapsed, 4);
 
         // Add process time attribute
-        $attribute['PROCESS_TIME'] = $total_time;
+        $attribute['RUNTIME'] = $total_time;
 
         $this->logger->info($message, $attribute);
     }
