@@ -51,7 +51,7 @@ class ActiveDirectory
         $this->ldap = new Ldap($this->options);
     }
 
-    protected function login(): bool
+    protected function login()
     {
         $this->startSession();
 

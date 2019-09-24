@@ -28,7 +28,7 @@ class LdapModel extends ActiveDirectory
         $this->log = new Log();
     }
 
-    public function auth(): array
+    public function auth()
     {
         $this->uid = Input::clean($this->username);
         $this->pwd = Input::clean($this->password);
@@ -38,13 +38,13 @@ class LdapModel extends ActiveDirectory
 
         if ($validate) {
             return [
-                'RETURN_CODE'       => 1,
+                'RETURN_CODE'     => 1,
                 'RETURN_VALUE'    => 'Access Granted'
             ];
         }
 
         return [
-            'RETURN_CODE'       => $validate,
+            'RETURN_CODE'     => 2,
             'RETURN_VALUE'    => 'Access Denied',
         ];
     }

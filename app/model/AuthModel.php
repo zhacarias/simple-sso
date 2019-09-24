@@ -24,7 +24,7 @@ class AuthModel extends Database
         $this->log = new Log();
     }
 
-    public function auth() : array
+    public function auth()
     {
         $this->username = Input::clean($this->username);
         $this->password = Input::clean($this->password);
@@ -40,7 +40,7 @@ class AuthModel extends Database
         return $result;
     }
 
-    public function login() : array
+    public function login()
     {
         $this->connect();
         $result = $this->pdo->query(
@@ -58,7 +58,7 @@ class AuthModel extends Database
         return $result;
     }
 
-    public function loginExec() : array
+    public function loginExec()
     {
         $this->connectExec();
         $result = $this->pdo->query(
