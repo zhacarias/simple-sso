@@ -43,6 +43,22 @@ class Log
         $this->logger->info($message, $attribute);
     }
 
+    public function ldapLog($message, $attribute = [], $time_start)
+    {
+        // create a log channel
+        $this->logger = new Logger('Ldap');
+        $this->logger->pushHandler(new RotatingFileHandler(__DIR__ . '/../../logs/ldap.log', 0, Logger::INFO));
+
+        // End Process time
+        $time_elapsed = $this->microtime_diff($time_start);
+        $total_time = round($time_elapsed, 4);
+
+        // Add process time attribute
+        $attribute['RUNTIME'] = $total_time;
+
+        $this->logger->info($message, $attribute);
+    }
+
     public function dbLog($message, $attribute = [])
     {
         // create a log channel
