@@ -38,13 +38,13 @@ class LdapModel extends ActiveDirectory
 
         if ($validate) {
             return [
-                'RETURN_CODE'       => 1,
+                'RETURN_CODE'     => 1,
                 'RETURN_VALUE'    => 'Access Granted'
             ];
         }
 
         return [
-            'RETURN_CODE'       => $validate,
+            'RETURN_CODE'     => 0,
             'RETURN_VALUE'    => 'Access Denied',
         ];
     }
