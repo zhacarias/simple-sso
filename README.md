@@ -1,14 +1,14 @@
 ## Single sign-on
 
-This project created for centralized Single Sign-on API using e-Payslip and Active Directory credentials.
+This project is created for centralized Single Sign-on API using e-Payslip and Active Directory as source credentials.
 
 ### Production Platform
 
-- Programming Language: **[PHP](https://www.php.net/) 7.2.4**
+- Programming Language: **[PHP 7.2.4](https://www.php.net/)**
 - Framework: **[Slim](http://www.slimframework.com/)**
 - Web Server: **[Apache 2.4.29](https://httpd.apache.org/)**
 - DBMS:  **[Microsoft SQL Server 2016](https://www.microsoft.com/en-us/sql-server/sql-server-2016)**
-- Operating System: **[CentOS Linux 7]([https://centos.org/](https://centos.org/))**
+- Operating System: **[CentOS Linux 7](https://centos.org/)**
 - Driver: **[FreeTDS](https://www.freetds.org/)**
 
 ### License
@@ -22,12 +22,12 @@ This project created for centralized Single Sign-on API using e-Payslip and Acti
 
 ##### SSO Authentication Base URL:  `https://sso.smretail.intranet`
 1. e-Payslip
-- ##### HTTP Method: `GET/POST `
-- ##### Endpoint: `/api/authenticate`
-- ##### Request Headers: `Authorization: Basic {Encoded Base64}`
+* ##### HTTP Method: `GET/POST `
+* ##### Endpoint: `/api/authenticate`
+* ##### Request Headers: `Authorization: Basic {Encoded Base64}`
 
 2. Active Directory
-- ##### HTTP Method: `POST `
-- ##### Endpoint: `/api/ldap-auth`
-- ##### Request Headers: `Authorization: Basic {Encoded Base64}`
-- ##### Request Parameter: `network={domain name}`
+* ##### HTTP Method: `POST `
+* ##### Endpoint: `/api/ldap-auth`
+* ##### Request Headers: `Authorization: Basic {Encoded Base64}`
+* ##### Request Parameter: `network={domain name}`
