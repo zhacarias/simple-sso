@@ -1,27 +1,33 @@
-# Slim Framework 3 Skeleton Application
+## Single sign-on
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This project created for centralized Single Sign-on API using e-Payslip and Active Directory credentials.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+### Production Platform
 
-## Install the Application
+- Programming Language: **[PHP](https://www.php.net/) 7.2.4**
+- Framework: **[Slim](http://www.slimframework.com/)**
+- Web Server: **[Apache 2.4.29](https://httpd.apache.org/)**
+- DBMS:  **[Microsoft SQL Server 2016](https://www.microsoft.com/en-us/sql-server/sql-server-2016)**
+- Operating System: **[CentOS Linux 7]([https://centos.org/](https://centos.org/))**
+- Driver: **[FreeTDS](https://www.freetds.org/)**
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+### License
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+> Unauthorized copying of this project, via any medium is strictly prohibited
+> Proprietary and confidential
+> Copyright (c) 2019, Intellectual Property of [SM Retail, Inc.](https://sminvestments.com/investments/retail) (ITS-BOS HRP)
+> All rights reserved.
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+### API Endpoint usage
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+##### SSO Authentication Base URL:  `https://sso.smretail.intranet`
+1. e-Payslip
+- ##### HTTP Method: `GET/POST `
+- ##### Endpoint: `/api/authenticate`
+- ##### Request Headers: `Authorization: Basic {Encoded Base64}`
 
-To run the application in development, you can run these commands 
-
-	cd [my-app-name]
-	php composer.phar start
-
-Run this command in the application directory to run the test suite
-
-	php composer.phar test
-
-That's it! Now go build something cool.
+2. Active Directory
+- ##### HTTP Method: `POST `
+- ##### Endpoint: `/api/ldap-auth`
+- ##### Request Headers: `Authorization: Basic {Encoded Base64}`
+- ##### Request Parameter: `network={domain name}`
