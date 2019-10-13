@@ -13,9 +13,9 @@ This project is created for centralized Single Sign-on API using e-Payslip and A
 
 ### License
 
-> Unauthorized copying of this project, via any medium is strictly prohibited
-> Proprietary and confidential
-> Copyright (c) 2019, Intellectual Property of [SM Retail, Inc.](https://sminvestments.com/investments/retail) (ITS-BOS HRP)
+> Unauthorized copying of this project, via any medium is strictly prohibited   
+> Proprietary and confidential   
+> Copyright (c) 2019, Intellectual Property of [SM Retail, Inc.](https://sminvestments.com/investments/retail) (ITS-BOS HRP)   
 > All rights reserved.
 
 ### API Endpoint usage
