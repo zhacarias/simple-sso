@@ -24,13 +24,13 @@ This project is created for centralized Single Sign-on API using e-Payslip and A
 
 ###### e-Payslip
 
-* ##### HTTP Method: `GET/POST `
-* ##### Endpoint: `/api/authenticate`
-* ##### Request Headers: `Authorization: Basic {Encoded Base64}`
+* HTTP Method: `GET/POST `
+* Endpoint: `/api/authenticate`
+* Request Headers: `Authorization: Basic {Encoded Base64}`
 
 ###### Active Directory
 
-* ##### HTTP Method: `POST `
-* ##### Endpoint: `/api/ldap-auth`
-* ##### Request Headers: `Authorization: Basic {Encoded Base64}`
-* ##### Request Parameter: `network={domain name}`
+* HTTP Method: `POST `
+* Endpoint: `/api/ldap-auth`
+* Request Headers: `Authorization: Basic {Encoded Base64}`
+* Request Parameter: `network={domain name}`
