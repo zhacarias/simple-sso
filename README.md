@@ -21,12 +21,15 @@ This project is created for centralized Single Sign-on API using e-Payslip and A
 ### API Endpoint usage
 
 ##### SSO Authentication Base URL:  `https://sso.smretail.intranet`
-1. e-Payslip
+
+###### e-Payslip
+
 * ##### HTTP Method: `GET/POST `
 * ##### Endpoint: `/api/authenticate`
 * ##### Request Headers: `Authorization: Basic {Encoded Base64}`
 
-2. Active Directory
+###### Active Directory
+
 * ##### HTTP Method: `POST `
 * ##### Endpoint: `/api/ldap-auth`
 * ##### Request Headers: `Authorization: Basic {Encoded Base64}`
