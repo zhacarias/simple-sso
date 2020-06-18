@@ -11,6 +11,8 @@ $app->get('/', function () use ($app) {
 
 $app->group('/api', function () use ($app) {
     $app->map(['GET', 'POST'], '/authenticate', 'AuthController:sso');
+	
+	$app->map(['GET', 'POST'], '/authenticateV2', 'AuthControllerV2:sso');
 
     $app->post('/ldap-auth', 'AuthController:ldap');
 });
