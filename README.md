@@ -1,8 +1,8 @@
-## Simple Single Sign-On
+## Simple Single Sign-On using Slim Framework
 
 ### API Endpoint usage
 
-###### SSO
+###### Custom
 
 * HTTP Method: `GET/POST`
 * Endpoint: `/api/authenticate`
