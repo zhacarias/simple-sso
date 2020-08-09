@@ -26,7 +26,3 @@ $container['logger'] = function ($c) {
 $container['AuthController'] = function ($c) use ($container) {
     return new App\Controller\AuthController($container);
 };
-
-$container['AuthControllerV2'] = function ($c) use ($container) {
-    return new App\Controller\AuthControllerV2($container);
-};
